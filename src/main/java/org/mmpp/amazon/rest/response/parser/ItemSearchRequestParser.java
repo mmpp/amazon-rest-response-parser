@@ -1,6 +1,6 @@
-package org.mmpp.amazon.ecs.response.parser;
+package org.mmpp.amazon.rest.response.parser;
 
-import org.mmpp.amazon.ecs.response.model.ItemSearchRequest;
+import org.mmpp.amazon.rest.response.model.ItemSearchRequest;
 import org.w3c.dom.Element;
 
 public class ItemSearchRequestParser extends AbstractItemRequestParser<ItemSearchRequest>{

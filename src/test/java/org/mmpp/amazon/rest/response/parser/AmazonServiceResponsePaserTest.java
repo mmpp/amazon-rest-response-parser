@@ -1,4 +1,4 @@
-package org.mmpp.amazon.ecs.response.parser;
+package org.mmpp.amazon.rest.response.parser;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -8,26 +8,27 @@ import java.io.IOException;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.junit.Test;
-import org.mmpp.amazon.ecs.response.model.AbstractItemRequest;
-import org.mmpp.amazon.ecs.response.model.AbstractResponse;
-import org.mmpp.amazon.ecs.response.model.Author;
-import org.mmpp.amazon.ecs.response.model.Creator;
-import org.mmpp.amazon.ecs.response.model.ItemAttribute;
-import org.mmpp.amazon.ecs.response.model.ItemLink;
-import org.mmpp.amazon.ecs.response.model.ItemLookupErrorResponse;
-import org.mmpp.amazon.ecs.response.model.ItemLookupRequest;
-import org.mmpp.amazon.ecs.response.model.ItemLookupResponse;
-import org.mmpp.amazon.ecs.response.model.ItemLookupResult;
-import org.mmpp.amazon.ecs.response.model.ItemSearchRequest;
-import org.mmpp.amazon.ecs.response.model.ItemSearchResponse;
-import org.mmpp.amazon.ecs.response.model.ItemSearchResult;
-import org.mmpp.amazon.ecs.response.model.Manufacturer;
-import org.mmpp.amazon.ecs.response.model.OperationRequest;
-import org.mmpp.amazon.ecs.response.model.ProductGroup;
-import org.mmpp.amazon.ecs.response.model.Request;
-import org.mmpp.amazon.ecs.response.model.Title;
-import org.mmpp.amazon.ecs.response.parser.AmazonServiceResponseParser;
-import org.mmpp.amazon.ecs.response.parser.AmazonServiceResponseParserImpl;
+import org.mmpp.amazon.rest.response.model.AbstractItemRequest;
+import org.mmpp.amazon.rest.response.model.AbstractResponse;
+import org.mmpp.amazon.rest.response.model.Author;
+import org.mmpp.amazon.rest.response.model.Creator;
+import org.mmpp.amazon.rest.response.model.ItemAttribute;
+import org.mmpp.amazon.rest.response.model.ItemLink;
+import org.mmpp.amazon.rest.response.model.ItemLookupErrorResponse;
+import org.mmpp.amazon.rest.response.model.ItemLookupRequest;
+import org.mmpp.amazon.rest.response.model.ItemLookupResponse;
+import org.mmpp.amazon.rest.response.model.ItemLookupResult;
+import org.mmpp.amazon.rest.response.model.ItemSearchRequest;
+import org.mmpp.amazon.rest.response.model.ItemSearchResponse;
+import org.mmpp.amazon.rest.response.model.ItemSearchResult;
+import org.mmpp.amazon.rest.response.model.Manufacturer;
+import org.mmpp.amazon.rest.response.model.OperationRequest;
+import org.mmpp.amazon.rest.response.model.ProductGroup;
+import org.mmpp.amazon.rest.response.model.Request;
+import org.mmpp.amazon.rest.response.model.Title;
+import org.mmpp.amazon.rest.response.parser.AmazonServiceResponseParser;
+import org.mmpp.amazon.rest.response.parser.AmazonServiceResponseParserImpl;
+import org.mmpp.amazon.rest.response.parser.ElementUtil;
 
 import org.xml.sax.SAXException;
 
@@ -56,10 +57,10 @@ public class AmazonServiceResponsePaserTest {
 		assertEquals(2,itemResult.getTotalPage());
 		assertEquals(17,itemResult.getTotalResult());
 		assertEquals("http://www.amazon.co.jp/gp/redirect.html?camp=2025&creative=5143&location=http%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3D%25E7%25A5%259E%25E5%25A1%259A%2B%25E3%2581%25A8%25E3%2581%258D%25E3%2581%258A%26url%3Dsearch-alias%253Dbooks-single-index&linkCode=xm2&tag=AssociateTag-22&SubscriptionId=AWSAccessKeyId",itemResult.getMoreSearchResultsUrl());
-		java.util.List<org.mmpp.amazon.ecs.response.model.Item> items = itemResult.getItems();
+		java.util.List<org.mmpp.amazon.rest.response.model.Item> items = itemResult.getItems();
 		assertEquals(10,items.size());
 		{
-			org.mmpp.amazon.ecs.response.model.Item item = items.get(0);
+			org.mmpp.amazon.rest.response.model.Item item = items.get(0);
 			assertEquals("406321026X",item.getASIN());
 			assertEquals("http://www.amazon.co.jp/%E3%83%90%E3%82%A4%E3%82%AD%E3%83%83%E3%82%BA-1-%E3%82%A2%E3%83%95%E3%82%BF%E3%83%8C%E3%83%BC%E3%83%B3KC-%E7%A5%9E%E5%A1%9A-%E3%81%A8%E3%81%8D%E3%81%8A/dp/406321026X%3FSubscriptionId%3DAWSAccessKeyId%26tag%3DAssociateTag-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D406321026X",item.getDetailPageURL());
 			java.util.List<ItemLink> itemLinks = item.getItemLinks();
@@ -137,10 +138,10 @@ public class AmazonServiceResponsePaserTest {
 			assertEquals("Books",itemLookupRequest.getSearchIndex());
 			assertEquals("All",itemLookupRequest.getVariationPage());
 		}
-		java.util.List<org.mmpp.amazon.ecs.response.model.Item> items = itemResult.getItems();
+		java.util.List<org.mmpp.amazon.rest.response.model.Item> items = itemResult.getItems();
 		assertEquals(1,items.size());
 		{
-			org.mmpp.amazon.ecs.response.model.Item item = items.get(0);
+			org.mmpp.amazon.rest.response.model.Item item = items.get(0);
 			assertEquals("4774151041",item.getASIN());
 			java.util.List<ItemLink> itemLinks = item.getItemLinks();
 			assertEquals(4,itemLinks.size());
@@ -206,10 +207,10 @@ public class AmazonServiceResponsePaserTest {
 			assertEquals("All",itemLookupRequest.getVariationPage());
 		}
 
-		java.util.List<org.mmpp.amazon.ecs.response.model.Item> items = itemResult.getItems();
+		java.util.List<org.mmpp.amazon.rest.response.model.Item> items = itemResult.getItems();
 		assertEquals(1,items.size());
 		{
-			org.mmpp.amazon.ecs.response.model.Item item = items.get(0);
+			org.mmpp.amazon.rest.response.model.Item item = items.get(0);
 			assertEquals("4873112478",item.getASIN());
 			java.util.List<ItemLink> itemLinks = item.getItemLinks();
 			assertEquals(4,itemLinks.size());
@@ -253,7 +254,7 @@ public class AmazonServiceResponsePaserTest {
 		assertTrue(response instanceof ItemLookupErrorResponse);
 		ItemLookupErrorResponse itemLookupErrorResponse = (ItemLookupErrorResponse)response;
 		assertEquals("3db731eb-4752-4500-9f26-d5c85ef5748b",itemLookupErrorResponse.getRequestId());
-		org.mmpp.amazon.ecs.response.model.Error error =  itemLookupErrorResponse.getError();
+		org.mmpp.amazon.rest.response.model.Error error =  itemLookupErrorResponse.getError();
 		assertEquals("RequestExpired",error.getCode());
 		assertEquals("Request has expired. Timestamp date is 2012-05-11T20:41:32.713Z.",error.getMessage());
 

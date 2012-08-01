@@ -1,6 +1,6 @@
-package org.mmpp.amazon.ecs.response.parser;
+package org.mmpp.amazon.rest.response.parser;
 
-import org.mmpp.amazon.ecs.response.model.AbstractResponse;
+import org.mmpp.amazon.rest.response.model.AbstractResponse;
 import org.w3c.dom.Document;
 
 /**

@@ -1,6 +1,6 @@
-package org.mmpp.amazon.ecs.response.parser;
+package org.mmpp.amazon.rest.response.parser;
 
-import org.mmpp.amazon.ecs.response.model.ItemLookupRequest;
+import org.mmpp.amazon.rest.response.model.ItemLookupRequest;
 import org.w3c.dom.Element;
 
 

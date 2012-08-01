@@ -1,13 +1,13 @@
-package org.mmpp.amazon.ecs.response.parser;
+package org.mmpp.amazon.rest.response.parser;
 
-import org.mmpp.amazon.ecs.response.model.AbstractItemResponse;
-import org.mmpp.amazon.ecs.response.model.AbstractItemResult;
-import org.mmpp.amazon.ecs.response.model.AbstractResponse;
-import org.mmpp.amazon.ecs.response.model.Error;
-import org.mmpp.amazon.ecs.response.model.ItemLookupErrorResponse;
-import org.mmpp.amazon.ecs.response.model.ItemLookupResponse;
-import org.mmpp.amazon.ecs.response.model.ItemSearchResponse;
-import org.mmpp.amazon.ecs.response.model.OperationRequest;
+import org.mmpp.amazon.rest.response.model.AbstractItemResponse;
+import org.mmpp.amazon.rest.response.model.AbstractItemResult;
+import org.mmpp.amazon.rest.response.model.AbstractResponse;
+import org.mmpp.amazon.rest.response.model.Error;
+import org.mmpp.amazon.rest.response.model.ItemLookupErrorResponse;
+import org.mmpp.amazon.rest.response.model.ItemLookupResponse;
+import org.mmpp.amazon.rest.response.model.ItemSearchResponse;
+import org.mmpp.amazon.rest.response.model.OperationRequest;
 import org.w3c.dom.Element;
 
 
@@ -51,7 +51,7 @@ public class ItemResponseParser extends AbstractElementParser<AbstractResponse> 
 		ItemLookupErrorResponse errorResponse = new ItemLookupErrorResponse();
 		errorResponse.setRequestId(ElementParserUtil.readElementTextContent(element,"RequestId"));
 		org.w3c.dom.Element elementError = (org.w3c.dom.Element)(element.getElementsByTagName("Error").item(0));
-		org.mmpp.amazon.ecs.response.model.Error error = parseError(elementError);
+		org.mmpp.amazon.rest.response.model.Error error = parseError(elementError);
 		errorResponse.setError(error);
 		return errorResponse;
 	}

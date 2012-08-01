@@ -1,14 +1,15 @@
-package org.mmpp.amazon.ecs.response.parser;
+package org.mmpp.amazon.rest.response.parser;
 
 import static org.junit.Assert.*;
 
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.junit.Test;
-import org.mmpp.amazon.ecs.response.model.Author;
-import org.mmpp.amazon.ecs.response.model.ItemAttribute;
-import org.mmpp.amazon.ecs.response.model.Manufacturer;
-import org.mmpp.amazon.ecs.response.parser.ItemAttributeParser;
+import org.mmpp.amazon.rest.response.model.Author;
+import org.mmpp.amazon.rest.response.model.ItemAttribute;
+import org.mmpp.amazon.rest.response.model.Manufacturer;
+import org.mmpp.amazon.rest.response.parser.ElementUtil;
+import org.mmpp.amazon.rest.response.parser.ItemAttributeParser;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.Element;
 

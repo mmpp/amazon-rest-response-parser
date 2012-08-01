@@ -1,7 +1,7 @@
-package org.mmpp.amazon.ecs.response.parser;
+package org.mmpp.amazon.rest.response.parser;
 
-import org.mmpp.amazon.ecs.response.model.ItemSearchResult;
-import org.mmpp.amazon.ecs.response.model.Request;
+import org.mmpp.amazon.rest.response.model.ItemSearchResult;
+import org.mmpp.amazon.rest.response.model.Request;
 import org.w3c.dom.Element;
 
 
@@ -17,7 +17,7 @@ public class ItemSearchResultParser extends AbstractItemResultParser<ItemSearchR
 		org.w3c.dom.NodeList items = element.getElementsByTagName("Item");
 		for(int i = 0 ; i < items.getLength() ; i ++ ) {
 			org.w3c.dom.Element elementItem = (org.w3c.dom.Element)items.item(i);
-			org.mmpp.amazon.ecs.response.model.Item item = parseItem(elementItem);
+			org.mmpp.amazon.rest.response.model.Item item = parseItem(elementItem);
 			itemResult.getItems().add(item);
 		}
 		String totalPages = ElementParserUtil.readElementTextContent(element,"TotalPages");

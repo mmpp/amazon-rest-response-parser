@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>amazon-ecs-parser</name>
+	<name>amazon-rest-response-parser</name>
 	<comment></comment>
 	<projects>
 	</projects>

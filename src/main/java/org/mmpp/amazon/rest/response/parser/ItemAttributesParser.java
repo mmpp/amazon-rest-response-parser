@@ -1,8 +1,8 @@
-package org.mmpp.amazon.ecs.response.parser;
+package org.mmpp.amazon.rest.response.parser;
 
 import java.util.List;
 
-import org.mmpp.amazon.ecs.response.model.ItemAttribute;
+import org.mmpp.amazon.rest.response.model.ItemAttribute;
 import org.w3c.dom.Element;
 
 public class ItemAttributesParser extends AbstractElementParser<java.util.List<ItemAttribute>>{

@@ -1,8 +1,8 @@
-package org.mmpp.amazon.ecs.response.parser;
+package org.mmpp.amazon.rest.response.parser;
 
-import org.mmpp.amazon.ecs.response.model.Item;
-import org.mmpp.amazon.ecs.response.model.ItemAttribute;
-import org.mmpp.amazon.ecs.response.model.ItemLink;
+import org.mmpp.amazon.rest.response.model.Item;
+import org.mmpp.amazon.rest.response.model.ItemAttribute;
+import org.mmpp.amazon.rest.response.model.ItemLink;
 import org.w3c.dom.Element;
 
 public class ItemParser extends AbstractElementParser<Item>{
@@ -22,7 +22,7 @@ public class ItemParser extends AbstractElementParser<Item>{
 	}
 	@Override
 	public Item parse(Element element) {
-		org.mmpp.amazon.ecs.response.model.Item item = new org.mmpp.amazon.ecs.response.model.Item();
+		org.mmpp.amazon.rest.response.model.Item item = new org.mmpp.amazon.rest.response.model.Item();
 		item.setASIN(ElementParserUtil.readElementTextContent(element,"ASIN"));
 		item.setDetailPageURL(ElementParserUtil.readElementTextContent(element,"DetailPageURL"));
 		// for ItemLinks

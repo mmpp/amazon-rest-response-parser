@@ -1,12 +1,13 @@
-package org.mmpp.amazon.ecs.response.parser;
+package org.mmpp.amazon.rest.response.parser;
 
 import static org.junit.Assert.*;
 
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.junit.Test;
-import org.mmpp.amazon.ecs.response.model.AbstractResponse;
-import org.mmpp.amazon.ecs.response.parser.ItemResponseParser;
+import org.mmpp.amazon.rest.response.model.AbstractResponse;
+import org.mmpp.amazon.rest.response.parser.ElementUtil;
+import org.mmpp.amazon.rest.response.parser.ItemResponseParser;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.Element;
 

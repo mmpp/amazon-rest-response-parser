@@ -1,4 +1,4 @@
-package org.mmpp.amazon.ecs.response.parser;
+package org.mmpp.amazon.rest.response.parser;
 
 import javax.xml.parsers.ParserConfigurationException;
 

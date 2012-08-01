@@ -1,7 +1,7 @@
-package org.mmpp.amazon.ecs.response.parser;
+package org.mmpp.amazon.rest.response.parser;
 
-import org.mmpp.amazon.ecs.response.model.AbstractItemRequest;
-import org.mmpp.amazon.ecs.response.model.Request;
+import org.mmpp.amazon.rest.response.model.AbstractItemRequest;
+import org.mmpp.amazon.rest.response.model.Request;
 import org.w3c.dom.Element;
 
 public class RequestParser extends AbstractElementParser<Request> {

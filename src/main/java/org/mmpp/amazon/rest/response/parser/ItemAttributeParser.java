@@ -1,11 +1,11 @@
-package org.mmpp.amazon.ecs.response.parser;
+package org.mmpp.amazon.rest.response.parser;
 
-import org.mmpp.amazon.ecs.response.model.Author;
-import org.mmpp.amazon.ecs.response.model.Creator;
-import org.mmpp.amazon.ecs.response.model.ItemAttribute;
-import org.mmpp.amazon.ecs.response.model.Manufacturer;
-import org.mmpp.amazon.ecs.response.model.ProductGroup;
-import org.mmpp.amazon.ecs.response.model.Title;
+import org.mmpp.amazon.rest.response.model.Author;
+import org.mmpp.amazon.rest.response.model.Creator;
+import org.mmpp.amazon.rest.response.model.ItemAttribute;
+import org.mmpp.amazon.rest.response.model.Manufacturer;
+import org.mmpp.amazon.rest.response.model.ProductGroup;
+import org.mmpp.amazon.rest.response.model.Title;
 import org.w3c.dom.Element;
 
 public class ItemAttributeParser extends AbstractElementParser<ItemAttribute>{
